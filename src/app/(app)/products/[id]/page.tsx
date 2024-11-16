@@ -2,7 +2,6 @@ import connectDB from "@/libs/mongodb/mongodb";
 import Product from "@/schemas/product";
 import { ProductDetailView } from "../../_components/ProductDetailView";
 import { Fragment } from "react";
-import { ProductProps } from "@/types/ProductProps";
 import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
@@ -37,31 +36,13 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 }
 const ProductPage = async ({ params }: { params: { id: string } }) => {
   try {
-    // Ensure the MongoDB document is converted to a plain object
-    const product = await Product.findById(params?.id).lean().exec();
-
-    // If no product is found, return a 404 page
-    if (!product) {
-      return notFound();
-    }
-
-    // Convert the data to be plain JSON-serializable
-    const data: ProductProps = {
-      _id: product._id.toString(), // Convert ObjectId to string
-      category: product.category as "clothings" | "shoes",
-      description: product.description || "",
-      images:
-        product.images?.map((img: { url: string; id: string }) => ({
-          url: img.url,
-          id: img.id,
-        })) || [],
-      price: product.price || "",
-      title: product.title || "",
-    };
-
+    const data = await fetch(
+      `${process.env.BASE_URL}/api/get-products/${params.id}`
+    ).then((res) => res.json());
+    //
     return (
       <Fragment>
-        <ProductDetailView product={data} />
+        <ProductDetailView product={data?.product} />
       </Fragment>
     );
   } catch (error) {
