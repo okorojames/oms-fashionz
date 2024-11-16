@@ -17,8 +17,8 @@ const uploadToCloud = async (file: File, folder: string) => {
     const result = await cloudinary.uploader.upload(url, {
       folder,
       transformation: {
-        width: 800,
-        height: 600,
+        width: 850,
+        height: 650,
         crop: "fill",
         quality: 95,
       },

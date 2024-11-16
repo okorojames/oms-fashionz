@@ -17,6 +17,40 @@ export const metadata: Metadata = {
     icon: "/oms-logo.png",
   },
   manifest: "/manifest.json",
+  keywords: [
+    "OMS Fashions",
+    "Shoes",
+    "FootWears",
+    "Clothes",
+    "Accessories",
+    "Bags",
+    "Jewellery",
+  ],
+  twitter: {
+    card: "summary_large_image",
+    title: "OMS Fashions",
+    description:
+      "OMS Fashions, where you buy can go through our latest hot trending fashions on Shoes, foot wears, Clothes, etc..., make a request for it, and have it delivered to your door step within 24 hours.",
+    creator: "@okorojamees_",
+    site: "",
+    images: ["https://oms-fashion.vercel.app/home-previews.jpg"],
+  },
+  openGraph: {
+    title: "OMS Fashions",
+    description:
+      "OMS Fashions, where you buy can go through our latest hot trending fashions on Shoes, foot wears, Clothes, etc..., make a request for it, and have it delivered to your door step within 24 hours.",
+    url: "https://oms-fashion.vercel.app/",
+    siteName: "OMS Fashions",
+    images: [
+      {
+        url: "https://oms-fashion.vercel.app/home-previews.jpg",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

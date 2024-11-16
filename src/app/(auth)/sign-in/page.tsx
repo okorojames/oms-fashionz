@@ -9,7 +9,7 @@ const SignInPage = () => {
   const Login = async (e: React.FormEvent) => {
     e.preventDefault();
     const res = await axios.post("/api/login-s-now", data);
-    if (res.statusText === "OK") {
+    if (res.statusText === "OK" || res.status === 200) {
       router.replace("/new-product");
     }
   };
