@@ -21,6 +21,12 @@ const nextConfig = {
       },
     ];
   },
+  // increase payload size
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "5mb",
+    },
+  },
 };
 
 export default nextConfig;

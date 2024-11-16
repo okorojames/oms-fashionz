@@ -3,14 +3,9 @@ import deleteUploadedFiles from "@/libs/cloudinary/delete-uploaded-files";
 import connectDB from "@/libs/mongodb/mongodb";
 import Product from "@/schemas/product";
 import { ProductPayloadProps } from "@/types/ProductPayloadProps";
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 
-export const config = {
-  api: {
-    bodyParser: { sizeLimit: "5mb" },
-  },
-};
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   await connectDB();
   try {
     const body = await request.formData();
