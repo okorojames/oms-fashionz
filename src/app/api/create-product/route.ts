@@ -5,9 +5,9 @@ import Product from "@/schemas/product";
 import { ProductPayloadProps } from "@/types/ProductPayloadProps";
 import { NextResponse } from "next/server";
 
-export const requestConfig = {
-  bodyParser: {
-    sizeLimit: "5mb", // Optional: set size limit
+export const config = {
+  api: {
+    bodyParser: { sizeLimit: "5mb" },
   },
 };
 export async function POST(request: Request) {
