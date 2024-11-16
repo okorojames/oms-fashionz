@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   await connectDB();
-  const product = await Product.findById(params?.id);
+  const product = await Product.findById(params?.id).lean().exec();
 
   return {
     title: product?.title,
