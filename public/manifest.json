@@ -1,0 +1,27 @@
+{
+  "theme_color": "#0572e6",
+  "background_color": "#080808",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "en-US",
+  "name": "OMS Fashions",
+  "short_name": "OMS Fashions",
+  "start_url": "/",
+  "id": "oms_fashions",
+  "description": "OMS Fashions, where you buy can go through our latest hot trending fashions on Shoes, foot wears, Clothes, etc..., make a request for it, and have it delivered to your door step within 24 hours."
+}
